@@ -11,6 +11,7 @@ import { generatePoemFromImage } from "@/ai/flows/generate-poem-from-image";
 import type { SavedPoemEntry } from "@/types";
 import { SavedPoemDisplayCard } from "@/components/SavedPoemDisplayCard";
 import { UploadCloud, Loader2, Save, Share2, Image as ImageIcon } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const LOCAL_STORAGE_KEY = "poemvision_saved_poems_nepali";
 
@@ -163,6 +164,9 @@ export default function PoemVisionPage() {
 
   return (
     <div className="min-h-screen p-4 sm:p-8 selection:bg-primary/30 selection:text-primary-foreground">
+       <div className="absolute top-4 right-4 sm:top-8 sm:right-8">
+        <ThemeToggle />
+      </div>
       <header className="text-center mb-8 sm:mb-12">
         <h1 className="text-4xl sm:text-5xl font-headline text-secondary-foreground tracking-tight">Nepali Poem Generator</h1>
         <p className="text-lg text-muted-foreground mt-2">Transform your photos into Nepali poetry.</p>
