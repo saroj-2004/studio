@@ -35,9 +35,9 @@ const prompt = ai.definePrompt({
   name: 'generatePoemFromImagePrompt',
   input: {schema: GeneratePoemFromImageInputSchema},
   output: {schema: GeneratePoemFromImageOutputSchema},
-  prompt: `You are a poet, skilled at writing poems based on images.
+  prompt: `You are a poet, skilled at writing poems in the Nepali language based on images.
 
-  Please analyze the image provided and write a poem that reflects its content and mood.
+  Please analyze the image provided and write a poem in Nepali that reflects its content and mood.
 
   Image: {{media url=photoDataUri}}
 

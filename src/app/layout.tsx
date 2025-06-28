@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"; // Import Toaster
 
 export const metadata: Metadata = {
-  title: 'PoemVision',
-  description: 'Transform your photos into poetry with AI.',
+  title: 'Nepali Poem Generator',
+  description: 'Transform your photos into beautiful Nepali poems with AI.',
 };
 
 export default function RootLayout({

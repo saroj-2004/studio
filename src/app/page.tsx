@@ -12,7 +12,7 @@ import type { SavedPoemEntry } from "@/types";
 import { SavedPoemDisplayCard } from "@/components/SavedPoemDisplayCard";
 import { UploadCloud, Loader2, Save, Share2, Image as ImageIcon } from "lucide-react";
 
-const LOCAL_STORAGE_KEY = "poemvision_saved_poems";
+const LOCAL_STORAGE_KEY = "poemvision_saved_poems_nepali";
 
 export default function PoemVisionPage() {
   const [uploadedImageDataUri, setUploadedImageDataUri] = useState<string | null>(null);
@@ -134,7 +134,7 @@ export default function PoemVisionPage() {
 
   const handleSharePoem = useCallback(async () => {
     if (generatedPoem && uploadedImagePreview) {
-      const shareText = `PoemVision created this poem for my image:\n\n${generatedPoem}`;
+      const shareText = `A Nepali poem created for my image:\n\n${generatedPoem}`;
       if (navigator.share) {
         try {
           // Fetch the image as a blob to share it
@@ -143,7 +143,7 @@ export default function PoemVisionPage() {
           const file = new File([blob], "poem-image.png", { type: blob.type });
 
           await navigator.share({
-            title: "Poem from PoemVision",
+            title: "Nepali Poem",
             text: shareText,
             files: [file],
           });
@@ -164,8 +164,8 @@ export default function PoemVisionPage() {
   return (
     <div className="min-h-screen p-4 sm:p-8 selection:bg-primary/30 selection:text-primary-foreground">
       <header className="text-center mb-8 sm:mb-12">
-        <h1 className="text-4xl sm:text-5xl font-headline text-secondary-foreground tracking-tight">PoemVision</h1>
-        <p className="text-lg text-muted-foreground mt-2">Transform your photos into poetry.</p>
+        <h1 className="text-4xl sm:text-5xl font-headline text-secondary-foreground tracking-tight">Nepali Poem Generator</h1>
+        <p className="text-lg text-muted-foreground mt-2">Transform your photos into Nepali poetry.</p>
       </header>
 
       <main className="max-w-6xl mx-auto space-y-12">
@@ -194,12 +194,12 @@ export default function PoemVisionPage() {
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-2xl font-headline text-primary">Generated Poem</h2>
+              <h2 className="text-2xl font-headline text-primary">Generated Nepali Poem</h2>
               <div className="bg-card border border-border rounded-lg p-1 min-h-[calc(16rem+theme(spacing.8))] aspect-square flex flex-col"> {/* Matched height of image container approx */}
                 {isLoading ? (
                   <div className="flex-grow flex flex-col items-center justify-center text-center p-4">
                     <Loader2 size={40} className="animate-spin text-primary mb-3" />
-                    <p className="text-muted-foreground font-medium">Crafting your poetic vision...</p>
+                    <p className="text-muted-foreground font-medium">Crafting your Nepali poem...</p>
                     <p className="text-sm text-muted-foreground">This may take a moment.</p>
                   </div>
                 ) : generatedPoem ? (
@@ -231,7 +231,7 @@ export default function PoemVisionPage() {
 
         {savedPoems.length > 0 && (
           <section className="pt-8">
-            <h2 className="text-3xl font-headline text-secondary-foreground mb-6 text-center">Your Saved Poems</h2>
+            <h2 className="text-3xl font-headline text-secondary-foreground mb-6 text-center">Your Saved Nepali Poems</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {savedPoems.map(poem => (
                 <SavedPoemDisplayCard key={poem.id} poemEntry={poem} onDelete={handleDeletePoem} />
@@ -241,7 +241,7 @@ export default function PoemVisionPage() {
         )}
       </main>
       <footer className="text-center py-12 mt-12 border-t border-border">
-          <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} PoemVision. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Nepali Poem Generator. All rights reserved.</p>
       </footer>
     </div>
   );
